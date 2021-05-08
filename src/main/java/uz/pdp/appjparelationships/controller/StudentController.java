@@ -68,7 +68,7 @@ public class StudentController {
     public Page<Student> getByGroupId(@PathVariable Integer group_id,
                                       @RequestParam int page) {
         PageRequest pageRequest = PageRequest.of(page, page);
-        return studentRepository.findByGroup_FacultyId(group_id, pageRequest);
+        return studentRepository.findAllByGroupId(group_id, pageRequest);
     }
 
     @PostMapping
